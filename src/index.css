@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@source "../index.html";
+@source "../src/**/*.{js,ts,jsx,tsx}";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    @apply min-h-screen bg-background dark:bg-dark-bg transition-colors duration-300;
+  }
+  body {
+    @apply min-h-screen bg-background text-text-main font-sans antialiased dark:bg-dark-bg dark:text-dark-text transition-colors duration-300;
+  }
+}
+
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+}
